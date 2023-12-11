@@ -1,4 +1,4 @@
-package main
+package robot-cpu
 
 import (
 	"rdcarranza/consulta_ia"
