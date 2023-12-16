@@ -1,4 +1,4 @@
-package robot-cpu
+package main
 
 import (
 	"rdcarranza/consulta_ia"
@@ -7,5 +7,7 @@ import (
 
 func main() {
 	vozatexto_ia.Vozatexto_ia()
+	vozatexto_ia.VTxt_GetModulo()
 	consulta_ia.Consulta_ia()
+	consulta_ia.Consulta_GetModulo()
 }

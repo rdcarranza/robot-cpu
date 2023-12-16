@@ -7,7 +7,7 @@
 *.dll
 *.so
 *.dylib
-
+.fuse*
 # Test binary, built with `go test -c`
 *.test
 
@@ -19,7 +19,7 @@
 .vscode/
 
 # Go workspace file
-go.work
+#go.work
 
 # recursos
 *.wav
