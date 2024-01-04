@@ -1,4 +1,6 @@
 {
+    //declaro estas variables de configuración, porque trabajo con vscodium instalado desde flatpak.
     "go.gopath": "/home/darioc/go",
     "go.goroot": "/home/darioc/.var/app/com.vscodium.codium/data/go",
+    //"go.goroot": "/usr/local/go",
 }

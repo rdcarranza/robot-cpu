@@ -7,7 +7,7 @@ import (
 
 func main() {
 	vozatexto_ia.Vozatexto_ia()
-	vozatexto_ia.VTxt_GetModulo()
+	vozatexto_ia.VaT_GetModulo()
 	consulta_ia.Consulta_ia()
 	consulta_ia.Consulta_GetModulo()
 }
