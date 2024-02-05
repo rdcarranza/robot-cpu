@@ -16,30 +16,44 @@ func verificarEnv() bool {
 	*/
 
 	env := "./vozatexto-ia/vat.env"
+	copia_env := "./vozatexto-ia/env.copia"
 	if !envExiste(env) {
 		fmt.Println("El archivo env de VaT no existe!")
-		copia_env, err := os.Open("./vozatexto-ia/env.copia")
+		err := crearEnv(env, copia_env)
 		if err != nil {
 			log.Fatal(err)
-		}
-		_env, err := os.OpenFile(env, os.O_RDWR|os.O_CREATE, 0775)
-		if err != nil {
-			log.Fatal(err)
-		}
-		_, err = io.Copy(_env, copia_env)
-		if err != nil {
-			log.Fatal(err)
-		} else {
-			fmt.Println("Se genera env de Vat exitosamente!")
 		}
 
 	}
 
 	if envExiste(env) {
 		return true
-	} else {
-		return false
 	}
+
+	return false
+
+}
+
+func crearEnv(dir_env string, c_dir_env string) error {
+	copia_env, err := os.Open(c_dir_env)
+	if err != nil {
+		log.Fatal(err)
+	}
+	_env, err := os.OpenFile(dir_env, os.O_RDWR|os.O_CREATE, 0775)
+	if err != nil {
+		return err
+		//log.Fatal(err)
+	}
+	_, err = io.Copy(_env, copia_env)
+	if err != nil {
+		return err
+		//log.Fatal(err)
+
+	} else {
+		fmt.Println("Se genera env de Vat exitosamente!")
+	}
+
+	return nil
 }
 
 func envExiste(arch_env string) bool {
