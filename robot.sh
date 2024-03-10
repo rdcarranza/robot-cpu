@@ -19,7 +19,7 @@ fi
 #VOZATEXTO-IA. GO.
 #Se convierte ingresovoz.mp3 en texto plano, usando una API AI.
 
-arch2=./ingresotexto.mp3
+arch2=./vozatexto-ia/ingresotexto.txt
 
 #   si se creó el archivo ingresotexto.txt continua, caso contrario se interrumpe.
 
