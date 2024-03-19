@@ -2,7 +2,7 @@
 
 #Este script solo graba la interacción generando un archivo, hasta que se presiona una tecla.
 #La validación sobre la ejecución de este script se hace sobre si se generó o no el archivo ingresovoz.mp3.
-#dependencias: arecord, lame.
+#dependencias: arecord (alsa-utils), lame.
 
 source ./robot.conf
 

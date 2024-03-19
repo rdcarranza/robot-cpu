@@ -1,10 +1,12 @@
 package vozatexto_ia
 
 import (
+	"bufio"
 	"fmt"
 	"io"
 	"log"
 	"os"
+	"strings"
 )
 
 func verificarEnv() bool {
@@ -61,5 +63,35 @@ func envExiste(arch_env string) bool {
 		return false
 	}
 	return true
+
+}
+
+func getEnv(v string) (string, error) {
+	env := "./vozatexto-ia/vat.env"
+
+	file, err := os.Open(env)
+	if err != nil {
+		fmt.Println(err)
+		return "", err
+	}
+	defer file.Close()
+
+	variable := v
+	scanner := bufio.NewScanner(file)
+	linea := ""
+	for scanner.Scan() {
+		line := scanner.Text()
+		if strings.Contains(line, variable) {
+			fmt.Printf("Se encontró la variable '%s' en la línea: %s\n", variable, line)
+			linea = line
+		}
+	}
+
+	if err := scanner.Err(); err != nil {
+		fmt.Println(err)
+		return "", err
+	}
+
+	return strings.Replace(linea, v+"=", "", -1), nil
 
 }

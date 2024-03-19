@@ -1,3 +1,5 @@
+#!/bin/bash
+
 arch=./ingresotexto.txt
 
 #lectura del archivo.
